@@ -14,10 +14,13 @@ function App() {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "black",
+        width: "100vw",
+        height: "100vh",
       }}
     >
       <button
-        onMouseUp={onCLickRandomize}
+        onClick={onCLickRandomize}
         style={{
           padding: "10px",
           fontSize: "20px",
@@ -26,6 +29,8 @@ function App() {
           border: "none",
           borderRadius: "5px",
           cursor: "pointer",
+          width: "100px",
+          height: "100px",
         }}
       >
         {count}
