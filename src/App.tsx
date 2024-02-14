@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 function App() {
-  const [count, setCounter] = useState("Genera Numero");
+  const [count, setCounter] = useState<any>("Genera Numero");
 
   function onCLickRandomize() {
-    setCounter("" + Math.floor(Math.random() * 100));
+    setCounter(Math.floor(Math.random() * 100));
   }
 
   return (
