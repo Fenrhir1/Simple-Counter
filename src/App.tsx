@@ -1,20 +1,23 @@
 import { useState } from "react";
 
 function App() {
-  const [count, setCounter] = useState(0);
+  const [count, setCounter] = useState("Genera Numero");
 
-  function onCLickAdd() {
-    setCounter(count + 1);
-  }
-
-  function onCLickDim() {
-    setCounter(count - 1);
+  function onCLickRandomize() {
+    setCounter("" + Math.floor(Math.random() * 100));
   }
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <button
-        onMouseUp={onCLickAdd}
+        onMouseUp={onCLickRandomize}
         style={{
           padding: "10px",
           fontSize: "20px",
@@ -25,24 +28,7 @@ function App() {
           cursor: "pointer",
         }}
       >
-        Aggiungi
-      </button>
-      <p style={{ fontSize: "20px", color: count < 0 ? "red" : "black" }}>
         {count}
-      </p>
-      <button
-        onMouseUp={onCLickDim}
-        style={{
-          padding: "10px",
-          fontSize: "20px",
-          backgroundColor: "lightblue",
-          color: "white",
-          border: "none",
-          borderRadius: "5px",
-          cursor: "pointer",
-        }}
-      >
-        Diminuisci
       </button>
     </div>
   );
